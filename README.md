@@ -23,6 +23,8 @@ This is what I developed for the first project in General Assembly's Web Develop
 
 I created a mockup based around the basic features that I will implement in this project.  I've also created a mockup showing "bonus" features that I'd like to implement given time.
 
+I decided to approach this build with a "mobile-first" mindset.  I've read about the benefits of this mindset, and thought it might help me focus on creating a smooth, functional, small-scale product that I could (ideally) expand for larger screens without too much hassle. I created two mobile mockups showing what the final product might look like on smaller and larger mobile devices in both portrait and landscape.  I look forward to seeing how this approach turns out.
+
 #### Basic Implemented Features:
 
 * Buttons light up (change color) as the sequence is given to the player, and as the player presses the buttons in response.
@@ -32,6 +34,10 @@ I created a mockup based around the basic features that I will implement in this
 
 ##### Basic Features Mockup:
 ![Basic Features Mockup](mockups/game-basic-mockup.png "Basic Features Mockup")
+
+#### Mobile Mockups:
+![Mobile Mockup - Portrait](mockups/mobile-mockup.png "Mobile Mockup - Portrait")
+![Mobile Mockup - Landscape](mockups/mobile-mockup-landscape.png "Mobile Mockup - Landscape")
 
 ---
 
@@ -54,9 +60,6 @@ I created a mockup based around the basic features that I will implement in this
 
 * Recreate Simon's audio/visual pattern played when the game is turned on.
   - As seen in [this]() video. **(Video link coming soon.)**
-* Create a mockup for a responsive/mobile design and implement that design.
-  - This could involve stacked color divs or a basic four colored grid of divs.
-
 
 ##### Future Features Mockup:
 ![Future Features Mockup](mockups/game-future-mockup.png "Future Features Mockup")
