@@ -43,13 +43,15 @@ I created a mockup based around the basic features that I will implement in this
   - This will affect the speed at which the player is given the pattern.
 * Add the ability to play with corresponding keyboard keys rather than clicking.
   - Possible key bindings:
-  | In-game button | Keyboard Key  |
-  | -------------- | ------------- |
-  | Start          | Enter         |
-  | Green          | Q             |
-  | Red            | R             |
-  | Blue           | B             |
-  | Yellow         | Z             |
+
+    | In-game button | Keyboard Key  |
+    | -------------- | ------------- |
+    | Start          | Enter         |
+    | Green          | Q             |
+    | Red            | R             |
+    | Blue           | B             |
+    | Yellow         | Z             |
+
 * Recreate Simon's audio/visual pattern played when the game is turned on.
   - As seen in [this]() video. **(Video link coming soon.)**
 * Create a mockup for a responsive/mobile design and implement that design.
