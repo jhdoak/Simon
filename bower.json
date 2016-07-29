@@ -1,0 +1,20 @@
+{
+  "name": "simon-game",
+  "homepage": "https://github.com/jhdoak/project1",
+  "authors": [
+    "Justin Doak <justinhdoak@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
