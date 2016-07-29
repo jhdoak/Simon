@@ -1,16 +1,112 @@
 body {
   display: flex;
   width: 100%;
+  height: 100%;
   flex-direction: column;
   padding: 0;
+  justify-content: center;
 }
 
 .container {
   padding: 0;
+  width: 100%;
 }
 
 nav, main, footer {
   outline: 1px solid red;
   width: 100%;
   flex-direction: row;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+h3 {
+  margin: auto;
+  padding: 5px;
+}
+
+/*** NAV STYLING ***/
+nav a {
+}
+
+
+
+/*** BOARD STYLING ***/
+
+.board {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.game-button {
+  width: 50%;
+  height: 125px;
+  border-radius: 10px;
+  border: 1px solid black;
+}
+
+#blue {
+  background-color: blue;
+  order: 3;
+}
+
+#green {
+  background-color: green;
+  order: -2;
+}
+
+#red {
+  background-color: red;
+  order: -1;
+}
+
+#yellow {
+  background-color: yellow;
+  order: 2;
+}
+
+#start-button {
+  order: 1;
+  width: 100%;
+  background-color: purple;
+  color: white;
+  text-align: center;
+  border:1px solid black;
+  border-radius: 10px;
+}
+
+.game-info {
+  width: 100%;
+  text-align: center;
+  order: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+/*** Game info pane styling ***/
+
+.game-info div {
+  outline: 1px solid orange;
+}
+
+#high-score {
+  order: 0;
+  flex-basis: 33%
+}
+
+#game-name {
+  order: 1;
+  flex-basis: 33%
+}
+
+#current-score {
+  order: 2;
+  flex-basis: 33%
 }
