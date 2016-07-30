@@ -1,5 +1,6 @@
 body {
   display: flex;
+  background: grey;
   width: 100%;
   height: 100%;
   flex-direction: column;
@@ -13,29 +14,41 @@ body {
 }
 
 nav, main, footer {
-  outline: 1px solid red;
   width: 100%;
   flex-direction: row;
 }
 
 h1 {
-  font-size: 40px;
+  font-size: 2em;
+  color: white;
 }
 
 h2 {
-  font-size: 20px;
+  font-size: 1em;
+  margin: 0;
 }
 
 h3 {
   margin: auto;
-  padding: 5px;
+  padding: 3px;
 }
 
 /*** NAV STYLING ***/
-nav a {
+nav {
+  display: flex;
 }
 
+.main-nav {
+  justify-content: space-around;
+}
 
+.main-nav a {
+  color: white;
+  font-size: .8em;
+  text-align: center;
+  padding: 0 2px;
+  max-width: 100%;
+}
 
 /*** BOARD STYLING ***/
 
@@ -48,65 +61,103 @@ nav a {
   width: 50%;
   height: 125px;
   border-radius: 10px;
-  border: 1px solid black;
 }
 
 #blue {
   background-color: blue;
-  order: 3;
+  order: 5;
+  border-bottom-right-radius: 70%;
 }
 
 #green {
   background-color: green;
-  order: -2;
+  order: 2;
+  border-top-left-radius: 70%;
 }
 
 #red {
   background-color: red;
-  order: -1;
+  order: 3;
+  border-top-right-radius: 70%;
 }
 
 #yellow {
   background-color: yellow;
-  order: 2;
+  order: 4;
+  border-bottom-left-radius: 70%;
 }
 
 #start-button {
-  order: 1;
+  order: 6;
   width: 100%;
   background-color: purple;
   color: white;
   text-align: center;
-  border:1px solid black;
   border-radius: 10px;
-}
-
-.game-info {
-  width: 100%;
-  text-align: center;
-  order: 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  width: 30%;
+  margin: 7px auto 0;
 }
 
 /*** Game info pane styling ***/
 
-.game-info div {
-  outline: 1px solid orange;
+
+.game-info {
+  width: 100%;
+  text-align: center;
+  order: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 10px 0 5px;
+  margin-bottom: 5px;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
 }
+
+#high-score, #current-score {
+  flex-basis: 33%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  color: white;
+}
+
 
 #high-score {
   order: 0;
-  flex-basis: 33%
 }
 
 #game-name {
   order: 1;
-  flex-basis: 33%
+  flex-basis: 33%;
+  margin: auto 0;
+  text-align: center;
 }
 
 #current-score {
   order: 2;
-  flex-basis: 33%
+}
+
+
+/*** Footer styling ***/
+
+footer h4 {
+  width: 100%;
+  text-align: center;
+  font-size: .75em;
+  padding: 2% 20% 0;
+  border-top: 1px solid black;
+}
+
+footer nav {
+  width: 100%;
+  justify-content: space-around;
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+}
+
+footer nav a {
+  width: 33%;
+  text-align: center;
+  color: white;
 }
