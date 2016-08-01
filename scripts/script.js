@@ -6,13 +6,18 @@ var game = {
   highScore: document.getElementById('#high-score-box'),
   colors: ['green', 'red', 'blue', 'yellow'],
 
+  delayedPlay: function(num, delay) {
+    setTimeout(function() {
+      game.lightUpAndSound(game.sequence[num], game.playerCorrect);
+    }, delay);
+  },
 
   // THIS FUNCTION CALLED ON START CLICK
   pushValueAndPlaySequence: function() {
     this.disableStartButton();
     this.sequence.push(Math.floor(Math.random() * 4));
     for (var i = 0; i < this.sequence.length; i++) {
-      this.lightUpAndSound(this.sequence[i], this.playerCorrect);
+        this.delayedPlay(i, i * 1000);
     }
     this.enableGameButtons();
   },
@@ -20,27 +25,30 @@ var game = {
   // THIS FUNCTION CALLED ON GAME BUTTON CLICK
   checkPlayerChoice: function(playerChoice) {
     this.disableGameButtons();
+    this.lightUpAndSound(playerChoice, this.playerCorrect);
+
     if (playerChoice !== this.sequence[this.checkIndex]) {
       this.playerCorrect = false;
-      this.lightUpAndSound(playerChoice, this.playerCorrect);
       //check high score
       this.checkIndex = 0;
       this.sequence = [];
       this.enableStartButton();
-      return;
     } else {
-      this.lightUpAndSound(playerChoice, this.playerCorrect);
       this.checkIndex += 1;
       if (this.checkIndex >= this.sequence.length) {
         this.checkIndex = 0;
-        this.pushValueAndPlaySequence();
-        return;
+        var that = this;
+        setTimeout(function() {
+          that.pushValueAndPlaySequence();
+        }, 1000);
+      } else {
+        this.enableGameButtons();
       }
-      this.enableGameButtons();
     }
   },
 
   lightUpAndSound: function(buttonChoice, playerCorrect) {
+    console.log('lightUpAndSound:', buttonChoice, playerCorrect);
     document.getElementById(this.colors[buttonChoice]).setAttribute('style', 'opacity: 1');
     setTimeout(game.resetButtonColors, 750);
   },
@@ -70,6 +78,10 @@ var game = {
 
   enableStartButton: function() {
     document.getElementById('start-button').removeAttribute('disabled');
+  },
+
+  wait: function() {
+    return;
   }
 
 }

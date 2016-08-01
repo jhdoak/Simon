@@ -81,28 +81,28 @@ nav {
 
 #blue {
   background-color: blue;
-  opacity: .5;
+  opacity: .4;
   order: 4;
   border-bottom-right-radius: 100%;
 }
 
 #green {
   background-color: green;
-  opacity: .5;
+  opacity: .4;
   order: 1;
   border-top-left-radius: 100%;
 }
 
 #red {
   background-color: red;
-  opacity: .5;
+  opacity: .4;
   order: 2;
   border-top-right-radius: 100%;
 }
 
 #yellow {
   background-color: yellow;
-  opacity: .5;
+  opacity: .4;
   order: 3;
   border-bottom-left-radius: 100%;
 }
