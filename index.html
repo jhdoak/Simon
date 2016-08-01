@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Document</title>
+    <title>Simon</title>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
   </head>
@@ -20,10 +20,10 @@
 
     <main class='board container'>
       <div class='game-buttons'>
-        <div class='game-button' id='green'></div>
-        <div class='game-button' id='red'></div>
-        <div class='game-button' id='yellow'></div>
-        <div class='game-button' id='blue'></div>
+        <button class='game-button' id='green' onclick="game.checkPlayerChoice(0)" disabled='disabled'></button>
+        <button class='game-button' id='red' onclick='game.checkPlayerChoice(1)' disabled='disabled'></button>
+        <button class='game-button' id='yellow' onclick='game.checkPlayerChoice(3)' disabled='disabled'></button>
+        <button class='game-button' id='blue' onclick='game.checkPlayerChoice(2)' disabled='disabled'></button>
       </div>
       <section class='game-info container'>
         <div id='high-score'>
@@ -38,7 +38,7 @@
           <h1 id='game-name'>Simon</h1>
         </div>
       </section>
-      <button id='start-button'>Start</button>
+      <button id='start-button' onclick='game.pushValueAndPlaySequence()'>Start</button>
     </main>
 
     <footer class='container'>
