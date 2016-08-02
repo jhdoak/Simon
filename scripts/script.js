@@ -12,14 +12,21 @@ var game = {
     }, delay);
   },
 
+  delayedEnableGameButtons: function(delay) {
+    setTimeout(function() {
+      game.enableGameButtons();
+    }, delay)
+  },
+
   // THIS FUNCTION CALLED ON START CLICK
   pushValueAndPlaySequence: function() {
     this.disableStartButton();
+    this.disableGameButtons();
     this.sequence.push(Math.floor(Math.random() * 4));
     for (var i = 0; i < this.sequence.length; i++) {
         this.delayedPlay(i, i * 1000);
     }
-    this.enableGameButtons();
+    this.delayedEnableGameButtons(this.sequence.length * 1000);
   },
 
   // THIS FUNCTION CALLED ON GAME BUTTON CLICK
@@ -42,7 +49,7 @@ var game = {
           that.pushValueAndPlaySequence();
         }, 1000);
       } else {
-        this.enableGameButtons();
+        this.delayedEnableGameButtons(500);
       }
     }
   },
