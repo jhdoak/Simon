@@ -80,8 +80,4 @@ var game = {
     document.getElementById('start-button').removeAttribute('disabled');
   },
 
-  wait: function() {
-    return;
-  }
-
 }
