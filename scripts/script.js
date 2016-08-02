@@ -5,6 +5,8 @@ var game = {
   currentScore: document.getElementById('current-score-box'),
   highScore: document.getElementById('high-score-box'),
   colors: ['green', 'red', 'blue', 'yellow'],
+  sounds: {
+  },
 
   delayedPlay: function(num, delay) {
     setTimeout(function() {
@@ -96,6 +98,33 @@ var game = {
     if (this.currentScore.innerHTML >= this.highScore.innerHTML) {
       this.highScore.innerHTML = this.currentScore.innerHTML;
     }
+  },
+
+  generateAudio: function() {
+    for (var m = 0; m < this.colors.length; m++){
+      var audio = document.createElement('audio');
+      audio.setAttribute('src', 'audio/' + this.colors[m] + '.wav');
+
+      switch (this.colors[m]) {
+        case 'green':
+          this.sounds.green = audio;
+          break;
+        case 'blue':
+          this.sounds.blue = audio;
+          break;
+        case 'red':
+          this.sounds.red = audio;
+          break;
+        case 'yellow':
+          this.sounds.yellow = audio;
+      }
+    }
+    var audio = document.createElement('audio');
+    audio.setAttribute('src', 'audio/lose.wav');
   }
 
 }
+
+$(function() {
+  game.generateAudio();
+});
