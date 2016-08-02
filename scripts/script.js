@@ -3,7 +3,7 @@ var game = {
   sequence: [],
   checkIndex: 0,
   currentScore: document.getElementById('current-score-box'),
-  highScore: document.getElementById('#high-score-box'),
+  highScore: document.getElementById('high-score-box'),
   colors: ['green', 'red', 'blue', 'yellow'],
 
   delayedPlay: function(num, delay) {
@@ -36,13 +36,14 @@ var game = {
 
     if (playerChoice !== this.sequence[this.checkIndex]) {
       this.playerCorrect = false;
-      //check high score
       this.checkIndex = 0;
       this.sequence = [];
       this.enableStartButton();
     } else {
       this.checkIndex += 1;
       if (this.checkIndex >= this.sequence.length) {
+        this.currentScore.innerHTML = this.checkIndex;
+        this.checkHighScore();
         this.checkIndex = 0;
         var that = this;
         setTimeout(function() {
@@ -86,5 +87,15 @@ var game = {
   enableStartButton: function() {
     document.getElementById('start-button').removeAttribute('disabled');
   },
+
+  scoreReset: function() {
+    this.currentScore.innerHTML = 0;
+  },
+
+  checkHighScore: function() {
+    if (this.currentScore.innerHTML >= this.highScore.innerHTML) {
+      this.highScore.innerHTML = this.currentScore.innerHTML;
+    }
+  }
 
 }
