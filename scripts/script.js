@@ -1,5 +1,4 @@
 var game = {
-  playerCorrect: true,
   sequence: [],
   checkIndex: 0,
   currentScore: document.getElementById('current-score-box'),
@@ -22,6 +21,7 @@ var game = {
 
   // THIS FUNCTION CALLED ON START CLICK
   pushValueAndPlaySequence: function() {
+    this.playerCorrect = true;
     this.disableStartButton();
     this.disableGameButtons();
     this.sequence.push(Math.floor(Math.random() * 4));
@@ -34,7 +34,6 @@ var game = {
   // THIS FUNCTION CALLED ON GAME BUTTON CLICK
   checkPlayerChoice: function(playerChoice) {
     this.disableGameButtons();
-    this.lightUpAndSound(playerChoice, this.playerCorrect);
 
     if (playerChoice !== this.sequence[this.checkIndex]) {
       this.playerCorrect = false;
@@ -54,12 +53,30 @@ var game = {
       } else {
         this.delayedEnableGameButtons(500);
       }
-    }
+    } this.lightUpAndSound(playerChoice, this.playerCorrect);
   },
 
   lightUpAndSound: function(buttonChoice, playerCorrect) {
     console.log('lightUpAndSound:', buttonChoice, playerCorrect);
     document.getElementById(this.colors[buttonChoice]).setAttribute('style', 'opacity: 1');
+
+    if (playerCorrect) {
+      switch (buttonChoice) {
+        case 0:
+          this.sounds.green.play();
+          break;
+        case 1:
+          this.sounds.red.play();
+          break;
+        case 2:
+          this.sounds.blue.play();
+          break;
+        case 3:
+          this.sounds.yellow.play();
+      }
+    } else {
+      this.sounds.lose.play();
+    }
     setTimeout(game.resetButtonColors, 750);
   },
 
@@ -121,6 +138,7 @@ var game = {
     }
     var audio = document.createElement('audio');
     audio.setAttribute('src', 'audio/lose.wav');
+    this.sounds.lose = audio;
   }
 
 }
