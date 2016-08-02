@@ -49,9 +49,9 @@ var game = {
         var that = this;
         setTimeout(function() {
           that.pushValueAndPlaySequence();
-        }, 1000);
+        }, 1500);
       } else {
-        this.delayedEnableGameButtons(500);
+        this.delayedEnableGameButtons(750);
       }
     } this.lightUpAndSound(playerChoice, this.playerCorrect);
   },
@@ -120,7 +120,7 @@ var game = {
   generateAudio: function() {
     for (var m = 0; m < this.colors.length; m++){
       var audio = document.createElement('audio');
-      audio.setAttribute('src', 'audio/' + this.colors[m] + '.wav');
+      audio.setAttribute('src', 'audio/' + this.colors[m] + '.mp3');
 
       switch (this.colors[m]) {
         case 'green':
@@ -137,7 +137,7 @@ var game = {
       }
     }
     var audio = document.createElement('audio');
-    audio.setAttribute('src', 'audio/lose.wav');
+    audio.setAttribute('src', 'audio/lose.mp3');
     this.sounds.lose = audio;
   }
 
