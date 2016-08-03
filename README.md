@@ -1,6 +1,7 @@
 # WDI Project 1 - Simon
 
 Project Link: [Simon](https://jhdoak.github.io/simon/)
+Trello Board: [Trello Board](https://trello.com/b/4Rlr1nEX/wdi-project-1)
 
 ## Finished Product:
 
@@ -8,7 +9,7 @@ Project Link: [Simon](https://jhdoak.github.io/simon/)
 
 ## Overview
 
-This is what I developed for the first project in General Assembly's Web Development Immersive.  I chose to do the Simon project because I felt I had some basic ideas on how I could put it together but knew it would challenge me at the same time.
+This is what I developed for the first project in General Assembly's Web Development Immersive.  I chose to do the Simon project because I felt I had some basic ideas for implementation but knew it would challenge me at the same time.
 
 ## Technologies Used
 
@@ -23,7 +24,7 @@ This is what I developed for the first project in General Assembly's Web Develop
 
 * Game buttons light up and play corresponding sounds on player click and during sequence playback.
 * Losing sound plays on incorrect presses.
-* Game keeps track of player score throughout the game.
+* Game keeps track of player's score throughout the game.
 * Game keeps track of player's high score.
   - Note: See 'Future Development'
 * Start button toggles to a reset button during gameplay, which resets the game and restarts.
@@ -37,6 +38,8 @@ This is what I developed for the first project in General Assembly's Web Develop
 I created a mockup based around the basic features that I will implement in this project.  I've also created a mockup showing "bonus" features that I'd like to implement given time.
 
 I decided to approach this build with a "mobile-first" mindset.  I've read about the benefits of this mindset, and thought it might help me focus on creating a smooth, functional, small-scale product that I could (ideally) expand for larger screens without too much hassle. I created two mobile mockups showing what the final product might look like on smaller and larger mobile devices in both portrait and landscape.  I look forward to seeing how this approach turns out.
+
+I also decided to build this game with vanilla javascript alone.  A member of a past WDI cohort reccommended I make sure to be comfortable with DOM manipulation and programming with vanilla javascript before using libraries like jQuery.  I feel this approach helped me with my understand of DOM manipulation, and now that I have a better understanding I look forward to seeing how jQuery could make my code more efficient and clean.
 
 #### Basic Implemented Features:
 
@@ -87,8 +90,10 @@ Additionally, with `setTimeout` and the desired `lightUpAndPlay` method inside t
 
 #### Future Development:
 
+* Rewrite javascript code with jQuery.
 * Give player the ability to choose between "Easy", "Medium", and "Hard" difficulties.
   - This will affect the speed at which the player is given the pattern.
+  - An alternative to this would be to implement an increase in speed at different points during the sequence rather than giving difficulty choices to the player. For example, sequence playback could start at a standard rate and increase each time the sequence hits a multiple of 5.
 * Store and display the player's longest successful sequence through browser refreshes and resets.
 * Add the ability to play with corresponding keyboard keys rather than clicking.
   - Possible key bindings:
