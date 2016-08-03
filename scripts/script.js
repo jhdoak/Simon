@@ -13,6 +13,12 @@ var game = {
     }, delay);
   },
 
+  delayedpushValueAndPlaySequence: function(delay) {
+    setTimeout(function() {
+      game.pushValueAndPlaySequence();
+    }, delay)
+  },
+
   delayedEnableGameButtons: function(delay) {
     setTimeout(function() {
       game.enableGameButtons();
@@ -28,13 +34,13 @@ var game = {
   // THIS FUNCTION CALLED ON START CLICK
   pushValueAndPlaySequence: function() {
     this.playerCorrect = true;
-    this.disableStartButton();
     this.disableGameButtons();
     this.sequence.push(Math.floor(Math.random() * 4));
     for (var i = 0; i < this.sequence.length; i++) {
         this.delayedPlay(i, i * 1000);
     }
     this.delayedEnableGameButtons(this.sequence.length * 1000);
+    this.delayedEnableStartButton(this.sequence.length * 1000);
   },
 
   // THIS FUNCTION CALLED ON GAME BUTTON CLICK
@@ -44,11 +50,13 @@ var game = {
     if (playerChoice !== this.sequence[this.checkIndex]) {
       this.playerCorrect = false;
       this.checkIndex = 0;
-      this.sequence = [];
+      this.disableStartButton();
+      this.toggleStartReset();
       this.delayedEnableStartButton(5000);
     } else {
       this.checkIndex += 1;
       if (this.checkIndex >= this.sequence.length) {
+        this.disableStartButton();
         this.currentScore.innerHTML = this.checkIndex;
         this.checkHighScore();
         this.checkIndex = 0;
@@ -63,7 +71,7 @@ var game = {
   },
 
   lightUpAndSound: function(buttonChoice, playerCorrect) {
-    //console.log('lightUpAndSound:', buttonChoice, playerCorrect);
+    console.log('lightUpAndSound:', buttonChoice, playerCorrect);
     document.getElementById(this.colors[buttonChoice]).setAttribute('style', 'opacity: 1');
 
     if (playerCorrect) {
@@ -113,8 +121,27 @@ var game = {
     document.getElementById('start-button').removeAttribute('disabled');
   },
 
-  scoreReset: function() {
+  toggleStartReset: function() {
+    console.log('switch called!');
+    var button = document.getElementById('start-button');
+    button.removeAttribute('onclick');
+
+    switch(button.innerHTML) {
+      case 'Start':
+        button.innerHTML = 'Reset';
+        button.setAttribute('onclick', 'game.gameReset(), game.delayedpushValueAndPlaySequence(500)')
+        break;
+      case 'Reset':
+        button.innerHTML = 'Start';
+        button.setAttribute('onclick', 'game. toggleStartReset(), game.gameReset(), game.pushValueAndPlaySequence()');
+    }
+
+  },
+
+  gameReset: function() {
+    this.sequence = [];
     this.currentScore.innerHTML = 0;
+    this.checkIndex = 0;
   },
 
   checkHighScore: function() {
