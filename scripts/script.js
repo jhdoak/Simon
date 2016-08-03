@@ -133,7 +133,7 @@ var game = {
         break;
       case 'Reset':
         button.innerHTML = 'Start';
-        button.setAttribute('onclick', 'game. toggleStartReset(), game.gameReset(), game.pushValueAndPlaySequence()');
+        button.setAttribute('onclick', 'game.toggleStartReset(), game.gameReset(), game.pushValueAndPlaySequence()');
     }
 
   },
