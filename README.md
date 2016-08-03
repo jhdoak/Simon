@@ -2,6 +2,10 @@
 
 Project Link: [Simon](https://jhdoak.github.io/simon/)
 
+## Finished Product:
+
+![Finished Product](mockups/screenshot.png "Finished Product")
+
 ## Overview
 
 This is what I developed for the first project in General Assembly's Web Development Immersive.  I chose to do the Simon project because I felt I had some basic ideas on how I could put it together but knew it would challenge me at the same time.
@@ -9,13 +13,22 @@ This is what I developed for the first project in General Assembly's Web Develop
 ## Technologies Used
 
 * Languages - HTML5, CSS3, JavaScript
+* Frameworks - Bootstrap for basic formatting
+* CSS: Flexbox for layout and item order, CSS media queries for responsiveness.
 * Mockups - Balsamiq
 * Project Planning & User Stories - Trello
 * Text Editor - Sublime Text 3
 
 ## Features
 
-* In Progress
+* Game buttons light up and play corresponding sounds on player click and during sequence playback.
+* Losing sound plays on incorrect presses.
+* Game keeps track of player score throughout the game.
+* Game keeps track of player's high score.
+  - Note: See 'Future Development'
+* Start button toggles to a reset button during gameplay, which resets the game and restarts.
+  - Note: See 'Future Development'
+* Game buttons are disabled during sequence playback to ensure the player doesn't play out of turn.
 
 ## Build Process
 
@@ -74,10 +87,9 @@ Additionally, with `setTimeout` and the desired `lightUpAndPlay` method inside t
 
 #### Future Development:
 
-* Store and display the player's longest successful sequence.
-  - This would ideally be stored through browser refreshes and resets.
 * Give player the ability to choose between "Easy", "Medium", and "Hard" difficulties.
   - This will affect the speed at which the player is given the pattern.
+* Store and display the player's longest successful sequence through browser refreshes and resets.
 * Add the ability to play with corresponding keyboard keys rather than clicking.
   - Possible key bindings:
 
@@ -90,7 +102,7 @@ Additionally, with `setTimeout` and the desired `lightUpAndPlay` method inside t
     | Yellow         | Z             |
 
 * Recreate Simon's audio/visual pattern played when the game is turned on.
-  - As seen in [this]() video. **(Video link coming soon.)**
+  - As seen in [this](https://youtu.be/1Yqj76Q4jJ4?t=7s) video.
 
 ##### Future Features Mockup:
 ![Future Features Mockup](mockups/game-future-mockup.png "Future Features Mockup")
