@@ -1,6 +1,7 @@
 # WDI Project 1 - Simon
 
 Project Link: [Simon](https://jhdoak.github.io/simon/)
+
 Trello Board: [Trello Board](https://trello.com/b/4Rlr1nEX/wdi-project-1)
 
 ## Finished Product:
@@ -39,7 +40,7 @@ I created a mockup based around the basic features that I will implement in this
 
 I decided to approach this build with a "mobile-first" mindset.  I've read about the benefits of this mindset, and thought it might help me focus on creating a smooth, functional, small-scale product that I could (ideally) expand for larger screens without too much hassle. I created two mobile mockups showing what the final product might look like on smaller and larger mobile devices in both portrait and landscape.  I look forward to seeing how this approach turns out.
 
-I also decided to build this game with vanilla javascript alone.  A member of a past WDI cohort reccommended I make sure to be comfortable with DOM manipulation and programming with vanilla javascript before using libraries like jQuery.  I feel this approach helped me with my understand of DOM manipulation, and now that I have a better understanding I look forward to seeing how jQuery could make my code more efficient and clean.
+I also decided to build this game with vanilla javascript alone.  A member of a past WDI cohort reccommended I make sure to be comfortable with DOM manipulation and programming with vanilla javascript before using libraries like jQuery.  I feel this approach helped me with my understand of DOM manipulation, and now that I have a better understanding I look forward to seeing how jQuery could make my code more efficient and clean.  Given time I could revisit this project and rewrite the code using jQuery.
 
 #### Basic Implemented Features:
 
@@ -52,8 +53,8 @@ I also decided to build this game with vanilla javascript alone.  A member of a 
 ![Basic Features Mockup](mockups/game-basic-mockup.png "Basic Features Mockup")
 
 #### Mobile Mockups:
-![Mobile Mockup - Portrait](mockups/mobile-mockup.png "Mobile Mockup - Portrait")
-![Mobile Mockup - Landscape](mockups/mobile-mockup-landscape.png "Mobile Mockup - Landscape")
+<img src="mockups/mobile-mockup.png" width="400px">
+<img src="mockups/mobile-mockup-landscape.png" width="400px">
 
 ---
 
