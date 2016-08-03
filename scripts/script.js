@@ -19,6 +19,12 @@ var game = {
     }, delay)
   },
 
+  delayedEnableStartButton: function(delay) {
+    setTimeout(function() {
+      game.enableStartButton();
+    }, delay)
+  },
+
   // THIS FUNCTION CALLED ON START CLICK
   pushValueAndPlaySequence: function() {
     this.playerCorrect = true;
@@ -39,7 +45,7 @@ var game = {
       this.playerCorrect = false;
       this.checkIndex = 0;
       this.sequence = [];
-      this.enableStartButton();
+      this.delayedEnableStartButton(5000);
     } else {
       this.checkIndex += 1;
       if (this.checkIndex >= this.sequence.length) {

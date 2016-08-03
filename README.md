@@ -1,6 +1,6 @@
 # WDI Project 1 - Simon
 
-Project Link: Coming Soon!
+Project Link: [Simon](https://jhdoak.github.io/simon/)
 
 ## Overview
 

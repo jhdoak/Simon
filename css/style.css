@@ -43,6 +43,7 @@ nav {
 
 .main-nav {
   justify-content: space-around;
+  min-height: 25px;
 }
 
 .main-nav a {
@@ -60,6 +61,7 @@ nav {
   flex-wrap: nowrap;
   padding-bottom: 10px;
   border-bottom: 1px solid black;
+  min-height: 360px;
 }
 
 .game-buttons {
@@ -195,7 +197,40 @@ footer nav a {
 /*** Media Queries ***/
 
 @media screen and (max-width: 299px) {
-  .game-info, .footer-nav, .main-nav {
+
+  .game-buttons {
+    height: 150px;
+    width: 150px;
+  }
+
+  h1 {
+    font-size: 1em;
+  }
+
+  h2 {
+    font-size: .6em;
+  }
+
+  h4 {
+    font-size: .5em;
+    width: 90%;
+  }
+
+  a {
+    font-size: .5em;
+  }
+
+  .board {
+    min-height: 260px;
+  }
+
+  #start-button {
+    font-size: .8em;
+    width: 30%;
+  }
+
+
+  /*.game-info, .footer-nav, .main-nav {
     flex-direction: column;
     flex-wrap: wrap;
   }
@@ -246,7 +281,7 @@ footer nav a {
   h4 {
     width: 90%;
     font-size: .65em;
-  }
+  } */
 }
 
 @media screen and (min-width: 450px) {
@@ -276,6 +311,10 @@ footer nav a {
   #start-button {
     font-size: 1.2em;
   }
+
+  .board {
+    min-height: 440px;
+  }
 }
 
 @media screen and (min-width: 600px) {
@@ -290,12 +329,20 @@ footer nav a {
   }
 
   .game-buttons {
-    height: 500px;
-    width: 500px;
+    height: 400px;
+    width: 400px;
   }
 
   #start-button {
     font-size: 1.5em;
+  }
+
+  .main-nav {
+    min-height: 27px;
+  }
+
+  .board {
+    min-height: 525px;
   }
 }
 
@@ -317,3 +364,9 @@ footer nav a {
   .footer-nav a {
     margin: 0 40px;
   }
+
+  .main-nav {
+    min-height: 30px;
+  }
+
+}
