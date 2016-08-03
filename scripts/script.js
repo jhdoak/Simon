@@ -63,7 +63,7 @@ var game = {
   },
 
   lightUpAndSound: function(buttonChoice, playerCorrect) {
-    console.log('lightUpAndSound:', buttonChoice, playerCorrect);
+    //console.log('lightUpAndSound:', buttonChoice, playerCorrect);
     document.getElementById(this.colors[buttonChoice]).setAttribute('style', 'opacity: 1');
 
     if (playerCorrect) {
@@ -149,6 +149,4 @@ var game = {
 
 }
 
-$(function() {
-  game.generateAudio();
-});
+window.onload = game.generateAudio();
