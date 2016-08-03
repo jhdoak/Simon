@@ -115,10 +115,12 @@ var game = {
 
   disableStartButton: function() {
     document.getElementById('start-button').setAttribute('disabled', 'disabled');
+    document.getElementById('start-button').setAttribute('style', 'opacity: .3');
   },
 
   enableStartButton: function() {
     document.getElementById('start-button').removeAttribute('disabled');
+    document.getElementById('start-button').removeAttribute('style');
   },
 
   toggleStartReset: function() {
