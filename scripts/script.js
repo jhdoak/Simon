@@ -69,7 +69,6 @@ var game = {
   },
 
   lightUpAndSound: function(buttonChoice, playerCorrect) {
-    console.log('lightUpAndSound:', buttonChoice, playerCorrect);
     $("#" + this.colors[buttonChoice]).attr('style', 'opacity: 1');
 
     if (playerCorrect) {
@@ -121,10 +120,7 @@ var game = {
   },
 
   toggleStartReset: function() {
-    console.log('switch called!');
     $("#start-button").removeAttr('onclick');
-    // var button = document.getElementById('start-button');
-    // button.removeAttribute('onclick');
 
     switch($("#start-button").html()) {
       case 'Start':
