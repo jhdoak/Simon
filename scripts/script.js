@@ -1,8 +1,6 @@
 var game = {
   sequence: [],
   checkIndex: 0,
-  currentScore: document.getElementById('current-score-box'),
-  highScore: document.getElementById('high-score-box'),
   colors: ['green', 'red', 'blue', 'yellow'],
   sounds: {
   },
@@ -57,7 +55,7 @@ var game = {
       this.checkIndex += 1;
       if (this.checkIndex >= this.sequence.length) {
         this.disableStartButton();
-        this.currentScore.innerHTML = this.checkIndex;
+        $("#current-score-box").html(this.checkIndex);
         this.checkHighScore();
         this.checkIndex = 0;
         var that = this;
@@ -72,7 +70,7 @@ var game = {
 
   lightUpAndSound: function(buttonChoice, playerCorrect) {
     console.log('lightUpAndSound:', buttonChoice, playerCorrect);
-    document.getElementById(this.colors[buttonChoice]).setAttribute('style', 'opacity: 1');
+    $("#" + this.colors[buttonChoice]).attr('style', 'opacity: 1');
 
     if (playerCorrect) {
       switch (buttonChoice) {
@@ -96,59 +94,59 @@ var game = {
 
   resetButtonColors: function() {
     for(var j = 0; j < game.colors.length; j++) {
-      document.getElementById(game.colors[j])
-              .removeAttribute('style');
+      $("#" + game.colors[j]).removeAttr("style");
     }
   },
 
   disableGameButtons: function() {
     for (var k = 0; k < this.colors.length; k++) {
-      document.getElementById(this.colors[k]).setAttribute('disabled', 'disabled');
+      $('#' + this.colors[k]).prop('disabled', true);
     }
   },
 
   enableGameButtons: function() {
     for (var l = 0; l < this.colors.length; l++) {
-      document.getElementById(this.colors[l]).removeAttribute('disabled');
+      $('#' + this.colors[l]).prop('disabled', false);
     }
   },
 
   disableStartButton: function() {
-    document.getElementById('start-button').setAttribute('disabled', 'disabled');
-    document.getElementById('start-button').setAttribute('style', 'opacity: .3');
+    $('#start-button').prop('disabled', true);
+    $('#start-button').attr('style', 'opacity: .3');
   },
 
   enableStartButton: function() {
-    document.getElementById('start-button').removeAttribute('disabled');
-    document.getElementById('start-button').removeAttribute('style');
+    $('#start-button').prop('disabled', false);
+    $('#start-button').removeAttr('style');
   },
 
   toggleStartReset: function() {
     console.log('switch called!');
-    var button = document.getElementById('start-button');
-    button.removeAttribute('onclick');
+    $("#start-button").removeAttr('onclick');
+    // var button = document.getElementById('start-button');
+    // button.removeAttribute('onclick');
 
-    switch(button.innerHTML) {
+    switch($("#start-button").html()) {
       case 'Start':
-        button.innerHTML = 'Reset';
-        button.setAttribute('onclick', 'game.gameReset(), game.delayedpushValueAndPlaySequence(500)')
+        $("#start-button").html("Reset");
+        $("#start-button").attr('onclick', 'game.gameReset(), game.delayedpushValueAndPlaySequence(500)');
         break;
       case 'Reset':
-        button.innerHTML = 'Start';
-        button.setAttribute('onclick', 'game.toggleStartReset(), game.gameReset(), game.pushValueAndPlaySequence()');
+        $("#start-button").html("Start");
+        $("#start-button").attr('onclick', 'game.toggleStartReset(), game.gameReset(), game.pushValueAndPlaySequence()');
     }
 
   },
 
   gameReset: function() {
     this.sequence = [];
-    this.currentScore.innerHTML = 0;
+    $("#current-score-box").html(0);
     this.checkIndex = 0;
   },
 
   checkHighScore: function() {
-    if (this.currentScore.innerHTML >= this.highScore.innerHTML) {
-      this.highScore.innerHTML = this.currentScore.innerHTML;
+    if ($("#current-score-box").html() >= $("#high-score-box").html()) {
+      $("#high-score-box").html($("#current-score-box").html());
     }
   },
 
