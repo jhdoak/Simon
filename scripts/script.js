@@ -58,9 +58,8 @@ var game = {
         $("#current-score-box").html(this.checkIndex);
         this.checkHighScore();
         this.checkIndex = 0;
-        var that = this;
-        setTimeout(function() {
-          that.pushValueAndPlaySequence();
+        setTimeout(() => {
+          this.pushValueAndPlaySequence();
         }, 1500);
       } else {
         this.delayedEnableGameButtons(750);
@@ -110,13 +109,11 @@ var game = {
   },
 
   disableStartButton: function() {
-    $('#start-button').prop('disabled', true);
-    $('#start-button').attr('style', 'opacity: .3');
+    $('#start-button').prop('disabled', true).attr('style', 'opacity: .3');
   },
 
   enableStartButton: function() {
-    $('#start-button').prop('disabled', false);
-    $('#start-button').removeAttr('style');
+    $('#start-button').prop('disabled', false).removeAttr('style');
   },
 
   toggleStartReset: function() {
@@ -124,12 +121,10 @@ var game = {
 
     switch($("#start-button").html()) {
       case 'Start':
-        $("#start-button").html("Reset");
-        $("#start-button").attr('onclick', 'game.gameReset(), game.delayedpushValueAndPlaySequence(500)');
+        $("#start-button").html("Reset").attr('onclick', 'game.gameReset(), game.delayedpushValueAndPlaySequence(500)');
         break;
       case 'Reset':
-        $("#start-button").html("Start");
-        $("#start-button").attr('onclick', 'game.toggleStartReset(), game.gameReset(), game.pushValueAndPlaySequence()');
+        $("#start-button").html("Start").attr('onclick', 'game.toggleStartReset(), game.gameReset(), game.pushValueAndPlaySequence()');
     }
 
   },
